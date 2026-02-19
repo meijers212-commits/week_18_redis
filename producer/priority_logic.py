@@ -12,7 +12,7 @@ class DataProcessor:
 
     @staticmethod
     def get_alert_list():
-        path = os.path.join("app", "border_alerts.json")
+        path = os.path.join("app","data","border_alerts.json")
         with open(path, "r", encoding="utf-8") as file:
             data = file.read()
             return data

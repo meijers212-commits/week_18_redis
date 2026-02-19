@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-COPY ../data/border_alerts.json .
-
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
