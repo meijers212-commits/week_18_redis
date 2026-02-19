@@ -5,7 +5,6 @@ import redis
 class RConnections:
     
     def __init__(self):
-        # redis
         self.redis_host = os.getenv("REDIS_HOST", "redis")
         self.redis_port = os.getenv("REDIS_PORT", 6379)
         
