@@ -1,0 +1,22 @@
+import os
+import redis
+
+
+class RConnections:
+    
+    def __init__(self):
+        # redis
+        self.redis_host = os.getenv("REDIS_HOST", "redis")
+        self.redis_port = os.getenv("REDIS_PORT", 6379)
+        
+        self.redis_client = redis.Redis(host=self.redis_host, port=self.redis_port, decode_responses=True)
+
+        print("connection to Redis is ready!")
+
+
+    def get_redis_conaction(self):
+        return self.redis_client
+
+  
+ 
+
