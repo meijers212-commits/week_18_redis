@@ -30,7 +30,7 @@ async def alerts_by_border_and_priority_r():
 
 # 2
 @router.get("/analytics/top-urgent-zone")
-async def top_urgent_zone_r():
+def top_urgent_zone_r():
     if redis.exists("top_urgent-zones"):
         alert = redis.get("top_urgent-zones")
         return {"source": "redis_cache", "alerts": json.loads(alert)}
@@ -45,7 +45,7 @@ async def top_urgent_zone_r():
 
 # 3
 @router.get("/analytics/distance-distribution")
-async def distance_distribution_r():
+def distance_distribution_r():
     if redis.exists("distance_distribution"):
         alert = redis.get("distance_distribution")
         return {"source": "redis_cache", "alerts": json.loads(alert)}
@@ -58,7 +58,7 @@ async def distance_distribution_r():
         
 # 4
 @router.get("/analytics/low-visibility-high-activity")
-async def low_visibility_high_activity_r():
+def low_visibility_high_activity_r():
     if redis.exists("low_visibility_high_activity"):
         alert = redis.get("low_visibility_high_activity")
         return {"source": "redis_cache", "alerts": json.loads(alert)}
@@ -72,7 +72,7 @@ async def low_visibility_high_activity_r():
 
 # 5
 @router.get("/analytics/hot-zones")
-async def hot_zones_r():
+def hot_zones_r():
     if redis.exists("hot_zones"):
         alert = redis.get("hot_zones")
         return {"source": "redis_cache", "alerts": json.loads(alert)}
